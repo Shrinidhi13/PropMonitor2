@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropMonitor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+
+
+</head>
+
+<body>
+
+    <div id="loading-screen">
+        <img src="download.png" alt="Loading Icon">
+        <p>Welcome to the Transparent World of Real Estate</p>
+        <div class="loading-dots">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg white sticky-top fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="download.png" alt="logo" class="w-30" id="logo">
+                <span class="company-name">PropMonitor</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Buy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#transactions">Transaction</a></li>
+                            <li><a class="dropdown-item" href="#About">About</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#Agent-Form">Add your property</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Rent
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#transactions">Transaction</a></li>
+                            <li><a class="dropdown-item" href="#About">About</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#Agent-Form">Add your property</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Service
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#Services">View</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#Contact">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transactions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="transaction.html">View transactions</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#Agent-Form">Add your property</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-dark px-3" aria-current="page" href="#QNA">Q&A</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn text-white bg-dark px-3" href="#Contact">Contact Us</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Slider -->
+    <div class="container mt-5">
+        <!-- Add top margin to create space below the navbar -->
+        <div id="carouselExampleAutoplaying" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="verne-ho-0LAJfSNa-xQ-unsplash.jpg" class="d-block w-100-height" alt="...">
+                    <div class="carousel-caption carousel1">
+                        <p>1 / 3</p>
+                        <h5>Discover Real Estate <br>With us </h5>
+                        <div class="mt-5 d-flex">
+                            <form>
+                                <div class="form-group">
+                                    <label for="propertyType">Select Property Type:</label>
+                                    <select class="form-control" id="propertyType">
+                                        <option value="flat">Apartment</option>
+                                        <option value="bungalow">Agricultural land</option>
+                                        <option value="farmhouse">Independent House</option>
+                                        <option value="farmhouse">Residential land</option>
+                                        <option value="farmhouse">Commericial land</option>
+                                        <option value="farmhouse">Warehouse</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="location">Select Location:</label>
+                                    <select class="form-control" id="location">
+                                        <option value="bangalore">Bangalore</option>
+                                        <option value="mumbai">Mumbai</option>
+                                        <!-- Add more location options as needed -->
+                                    </select>
+                                </div>
+
+                                <button class="btn btn-primary" type="button" onclick="searchProperty">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="home2.jpg" class="d-block w-100-height" alt="...">
+                    <div class="carousel-caption carousel1">
+                        <p>2 / 3</p>
+                        <h5>Want to know more about us <br>Welcome </h5>
+                        <div class="mt-5 d-flex">
+
+
+                            <button class="btn btn-primary" type="button" onclick="redirectToAbout()">
+                                <i class="fas fa-search"></i> About Us
+                            </button>
+                            <script>
+                                function redirectToAbout() {
+                                    window.location.href = '#About';
+                                }
+                            </script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="home3.jpg" class="d-block w-100-height" alt="...">
+                    <div class="carousel-caption carousel1">
+                        <p>3 / 3</p>
+                        <h5>Want to add your property? </h5>
+                        <div class="mt-5 d-flex">
+
+
+                            <button class="btn btn-primary" type="button" onclick="redirectToAgentForm()">
+                                <i class="fas fa-search"></i> Click here
+                            </button>
+                            <script>
+                                function redirectToAgentForm() {
+                                    window.location.href = '#Agent-Form';
+                                }
+                            </script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <div class="card mb-4 z-1 position-absolute card-bottom card mb-3 card-color rounded-0 bg-dark"
+                style="max-width: 540px;">
+                <div class="row align-items-center">
+
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Extra info..</h5>
+                            <p class="card-text text-white">This is a wider card with supporting text below as a natural
+                                lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="simone-hutsch-_wpce-AsLxk-unsplash.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <section class="container mt-5 mt-lg-0" style="margin-top: 100px;" id="transactions">
+
+        <p class="pt-5">Properties</p>
+        <div class="d-flex">
+            <h2>Know more about the transactions.</h2>
+            <h6 class="ms-auto btn btn-dark" style="background-color: black; color: white;"
+                onclick="redirectToTransaction()">Explore All <span class="arrow-icon">&rarr;</span></h6>
+
+            <script>
+                function redirectToTransaction() {
+                    window.location.href = 'transaction.html';
+                }
+            </script>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-md-3 g-4 mt-2 animated-card">
+
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card border-0 rounded-0">
+                    <div class="card-header bg-light text-dark">
+                        <h6>Location: Bangalore</h6>
+                    </div>
+                    <img src="home2.jpg" class="card-img-top" alt="Property 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Property 1</h5>
+                        <p class="card-text text-dark">Type: Independent House</p>
+                        <p class="card-text text-success">Square Footage: XXX sq. ft.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="text-success">&#8377;XXX,XXX</span>
+                        <button class="btn btn-dark" onclick="redirectToTransactionsDetails()">View now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card border-0 rounded-0">
+                    <div class="card-header bg-light text-dark">
+                        <h6>Location: Mumbai</h6>
+                    </div>
+                    <img src="verne-ho-0LAJfSNa-xQ-unsplash.jpg" class="card-img-top" alt="Property 2 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Property 2</h5>
+                        <p class="card-text text-dark">Type: Apartment</p>
+                        <p class="card-text text-success">Square Footage: YYY sq. ft.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="text-success">&#8377;YYY,YYY</span>
+                        <button class="btn btn-dark" onclick="redirectToTransactionsDetails()">View now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card border-0 rounded-0">
+                    <div class="card-header bg-light text-dark">
+                        <h6>Location: Bangalore</h6>
+                    </div>
+                    <img src="home3.jpg" class="card-img-top" alt="Property 3 Image">
+                    <div class="card-body">
+                        <h5 class="card-title ">Property 3</h5>
+                        <p class="card-text text-dark">Type: Agricultural land</p>
+                        <p class="card-text text-success">Square Footage: ZZZ sq. ft.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="text-success">&#8377;ZZZ,ZZZ</span>
+                        <button class="btn btn-dark" onclick="redirectToTransactionsDetails()">View now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark" style="margin-top: -15%;">
+        <div class="container pt-5">
+            <div class="row" style="margin-top: 25%;">
+                <div class="col-lg-4">
+                    <h2 style="color: aliceblue;">Faraz Ahmed</h2>
+                    <p style="color: aliceblue;">Founder Real Estate Insight</p>
+                </div>
+                <div class="col-lg-8 mb-5">
+                    <h6 class="lh-lg" style="color: aliceblue;">"We are an early-stage realty tech bootstrapped startup.
+                        We are on a mission to bring transparency in the real estate sector. Our vision is to leverage
+                        technology to our advantage and build tools that make it possible."</h6>
+                </div>
+            </div>
+
+            <hr class="text-light">
+
+            <div class="container mt-5 text-center">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-3 col-sm-6">
+                        <img src="download.png" alt="" style="width: 55%;">
+                    </div>
+                </div>
+                <div class="row text-light mt-2">
+                    <div class="col">
+                        <p>PropMonitor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about section-padding" style="margin-top: 40px;" id="Services">
+        <div class="text-center">
+            <h2>Our Services</h2>
+        </div>
+
+
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-5 col-md-12 col-12">
+
+                    <div class="d-flex">
+
+                        <div class="about-img mx-2">
+
+                            <img src="verne-ho-0LAJfSNa-xQ-unsplash.jpg" alt="about-img" class="img-fluid h-100 mt-4">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-lg-7 col-md-12 col-12 ps-lg-5 mt-md-5" style="margin-top: 40px;">
+                    <div class="about-text">
+                        <h2>You are our First <br>Priority</h2>
+                        <p>Real Estate professionals, including brokers, property valuers/appraisers, engineers, and
+                            others, have the opportunity to collaborate and contribute their data to create a free and
+                            open-source database. In return, they will gain access to a valuable source of potential
+                            leads. The more they contribute, the more features they can unlock, enhancing their access
+                            to valuable information and opportunities within the industry.
+                        </p>
+                        <a href="#" class="btn btn-outline-dark px-3" onclick="redirectToAbout()">Read More</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- Forms -->
+    <div class="container mt-5" id="Agent-Form">
+        <div class="text-center">
+            <h1 class="custom-background">Add Transaction</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+                <div class="card mt-2 mx-auto p-4 bg-light custom-background" id="Agent-Form2">
+                    <div class="card-body bg-light">
+                        <form id="contact-form" role="form" method="POST" action="/signup">
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_name">Firstname <span class="required">*</span></label>
+                                            <input id="form_name" type="text" name="name" class="form-control"
+                                                required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_lastname">Lastname <span class="required">*</span></label>
+                                            <input id="form_lastname" type="text" name="surname" class="form-control"
+                                                required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_email">Email <span class="required">*</span></label>
+                                            <input id="form_email" type="email" name="email" class="form-control"
+                                                required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_need">Please specify your need <span
+                                                    class="required">*</span></label>
+                                            <select id="form_need" name="need" class="form-control" required="required">
+                                                <option value="" selected disabled>--Select Your Issue--</option>
+                                                <option value="flat">Apartment</option>
+                                                <option value="bungalow">Agricultural land</option>
+                                                <option value="farmhouse">Independent House</option>
+                                                <option value="farmhouse">Residential land</option>
+                                                <option value="farmhouse">Commericial land</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="formFileMultiple" for="pdfFile" class="form-label">Upload property
+                                        related docs
+                                        here </label>
+                                    <input class="form-control" type="text" id="formFileMultiple" name="pdfFile"
+                                        placeholder="(Please add the google drive link)" required="required">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="form_message">Message <span class="required">*</span></label>
+                                            <textarea id="form_message" name="message" class="form-control" rows="4"
+                                                required="required"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success btn-send pt-2 btn-block">Send
+                                            Message</button>
+                                        <p class="text-danger mt-2">*Agents can list there transactions here by filling
+                                            the form.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <article class="container mt-5 mt-lg-0" style="margin-top: 100px;" id="About">
+        <p class="pt-5">Blogs</p>
+        <div class="d-flex">
+            <h2 id="About">Read about the available properties</h2>
+            <h6 class="ms-auto btn btn-info text-white" onclick="redirectToAbout()"> Read more <span
+                    class="arrow-icon">&rarr;</span></h6>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-md-3 g-4 mt-2 animated-card">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card border-0 rounded-0">
+                    <div class="card-header bg-light text-dark">
+                        <h6>Location: Bangalore</h6>
+                    </div>
+                    <img src="home2.jpg" class="card-img-top" alt="Property 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Property 1</h5>
+                        <p class="card-text text-dark">This charming house is located in a serene neighborhood. It
+                            offers a spacious living space with beautiful interiors and a well-maintained garden. Ideal
+                            for a family looking for a peaceful home.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="text-success">Contact for details</span>
+                        <a href="#" class="btn btn-info text-white" onclick="redirectToTransaction()">Read More</a>
+                        <!-- Changed price to "Contact for details" and updated the description -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card border-0 rounded-0">
+                    <div class="card-header bg-light text-dark">
+                        <h6>Location: Mumbai</h6>
+                    </div>
+                    <img src="verne-ho-0LAJfSNa-xQ-unsplash.jpg" class="card-img-top" alt="Property 2 Image">
+                    <div class="card-body">
+                        <h5 class="card-title" onclick="redirectToTransaction()">Property 2</h5>
+                        <p class="card-text text-dark">This modern flat offers a luxurious living experience with
+                            stunning views of the city. It's perfect for individuals seeking urban living in the heart
+                            of Mumbai.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="text-success">Contact for details</span>
+                        <a href="#" class="btn btn-info text-white">Read More</a>
+                        <!-- Changed price to "Contact for details" and updated the description -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card border-0 rounded-0">
+                    <div class="card-header bg-light text-dark">
+                        <h6>Location: Bangalore</h6>
+                    </div>
+                    <img src="home3.jpg" class="card-img-top" alt="Property 3 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Property 3</h5>
+                        <p class="card-text text-dark">This stunning farmhouse is surrounded by lush greenery and offers
+                            a tranquil retreat. It's an ideal property for those who appreciate nature and serenity.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="text-success">Contact for details</span>
+                        <a href="#" class="btn btn-info text-white" onclick="redirectToTransaction()">Read More</a>
+                        <!-- Changed price to "Contact for details" and updated the description -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+    <!--QNA Section-->
+
+    <section class="about section-padding" style="margin-top: 40px" id="QNA">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-12 mt-md-3">
+                    <div class="about-text">
+                        <h2>Welcome to Prop Monitor</h2>
+                        <p>Our goal is to create the world's most extensive database of property transactions. In India,
+                            where real estate is complex and data is limited, we aim to provide the public with the
+                            information they need to make informed investment decisions. We are committed to bridging
+                            the gap in the real estate market and providing valuable insights for our users.</p>
+                        <a href="#" class="btn btn-outline-dark px-3" onclick="redirectToAbout()">See More</a>
+                    </div>
+                </div>
+
+                <!--accordian-->
+                <div class="accordion col-lg-7 mt-3" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Frequently asked question - 1.
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <b>How can you Help?</b>
+                                <br>
+                                <br> General public can contribute to building our database by providing information
+                                about property transactions in their area. This could include details such as sale
+                                prices, property features, and transaction dates. Additionally, individuals can share
+                                their knowledge of local real estate trends and market conditions. By collaborating with
+                                the public, we can gather a wealth of valuable data and insights that will enrich our
+                                database and benefit the community as a whole.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Frequently asked question - 2.
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                What is our goal?
+                                <br>
+                                <br>
+                                Our goal is to create the world's most extensive database of property transactions. In
+                                India, where real estate is complex and data is limited, we aim to provide the public
+                                with the information they need to make informed investment decisions. We are committed
+                                to bridging the gap in the real estate market and providing valuable insights for our
+                                users.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Frequently asked question - 3.
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                What are the benefits for Real Estate Professionals?
+                                <br>
+                                <br>
+
+                                Real Estate professionals, including brokers, property valuers/appraisers, engineers,
+                                and others, have the opportunity to collaborate and contribute their data to create a
+                                free and open-source database. In return, they will gain access to a valuable source of
+                                potential leads. The more they contribute, the more features they can unlock, enhancing
+                                their access to valuable information and opportunities within the industry.
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+
+    <footer class="bg-dark bg-footer" style="margin-top: 80px" id="Contact">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <h5 class="text-light">About Us</h5>
+                    <p class="text-light">PropMonitor is an online property transaction tracker tool. We bring
+                        transparency to the real estate industry
+                        by providing access to reliable and up-to-date information. Our platform collects, analyzes, and
+                        displays data
+                        from various sources, empowering buyers, sellers, investors, and agents. Whether you're looking
+                        for a new home,
+                        selling your property, investing in real estate, or seeking professional advice, PropMonitor
+                        offers data-driven
+                        solutions.</p>
+                    <p class="text-light"><i class="fa fa-location"></i>Bengalore</p>
+                    <p class="text-light"><i class="fa fa-phone"></i>+91-7795490299</p>
+                    <p class="text-light"><i class="fa fa-envelope"> </i>faraz99.freelance.gmail.com</p>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-light">Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Forms</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-light">Stay Connected</h5>
+                    <ul class="text-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/company/real-estate-in/"><i class="fab fa-linkedin"></i>
+                                Linkedin</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-center text-light">
+                        Copyright &copy; 2023 <a href="#">PropMonitor</a>. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

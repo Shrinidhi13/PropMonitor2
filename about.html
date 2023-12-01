@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Transaction Tracker</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div id="loading-screen">
+        <img src="download.png" alt="Loading Icon">
+        <p>Welcome to the Transparent World of Real Estate</p>
+        <div class="loading-dots">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg white sticky-top fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="download.png" alt="logo" class="w-30" id="logo">
+                <span class="company-name">PropMonitor</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Buy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#transactions">Transaction</a></li>
+                            <li><a class="dropdown-item" href="index.html#About">About</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="index.html#Agent-Form">Add your property</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Rent
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#transactions">Transaction</a></li>
+                            <li><a class="dropdown-item" href="index.html#About">About</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="index.html#Agent-Form">Add your property</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Service
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#Services">View</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="index.html#Contact">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transaction
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="transaction.html">View transactions</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="index.html#Agent-Form">Add your property</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-dark px-3" aria-current="page" href="index.html#QNA">Q&A</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn text-white bg-dark px-3" href="#Contact">Contact Us</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- About Section -->
+    <section id="About" class="py-5 animate-on-scroll">
+        <div class="container">
+            <!-- Vision Section with Image -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <img src="home3.jpg" class="img-fluid rounded" alt="Vision Image">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Vision:</h3>
+                    <p class="lead">To build the Google of Real Estate industry.</p>
+                </div>
+            </div>
+
+            <!-- About Us Section with Background Color -->
+            <div class="row  p-5 mb-5">
+                <div class="col-lg-12">
+                    <h3 class="mb-4 text-light">About Us:</h3>
+                    <p class="lead text-light">PropMonitor is an online property transaction tracker tool. We are a
+                        PropTech
+                        startup based in India that aims to bring transparency to the real estate industry by making
+                        transaction data available to the public. We believe that access to reliable and up-to-date
+                        information can empower buyers, sellers, investors, and agents to make informed decisions and
+                        negotiate better deals.</p>
+                    <p class="lead text-light">Our platform collects, analyzes, and displays data from various sources,
+                        such as
+                        government records, property portals, brokers, and surveys. We provide insights on market
+                        trends, price movements, demand and supply, inventory, and more. Whether you are looking for a
+                        new home, selling your property, investing in real estate, or seeking professional advice,
+                        PropMonitor can help you with data-driven solutions.</p>
+                </div>
+            </div>
+
+            <!-- Goal Section with Image -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <img src="sorasak-KxCJXXGsv9I-unsplash.jpg" class="img-fluid rounded" alt="Goal Image">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">What is our goal?</h3>
+                    <p class="lead">Our goal is to create the world's most extensive database of property transactions.
+                        In India, where real estate is complex and data is limited, we aim to provide the public with
+                        the information they need to make informed investment decisions. We are committed to bridging
+                        the gap in the real estate market and providing valuable insights for our users.</p>
+                </div>
+            </div>
+
+            <!-- How can you Help? Section with Background Color -->
+            <div class="row  p-5 mb-5">
+                <div class="col-lg-12">
+                    <h3 class="mb-4 text-light">How can you Help?</h3>
+                    <p class="lead text-light">The general public can contribute to building our database by providing
+                        information
+                        about property transactions in their area. This could include details such as sale prices,
+                        property features, and transaction dates. Additionally, individuals can share their knowledge of
+                        local real estate trends and market conditions. By collaborating with the public, we can gather
+                        a wealth of valuable data and insights that will enrich our database and benefit the community
+                        as a whole.</p>
+                </div>
+            </div>
+
+            <!-- Benefits for Real Estate Professionals Section with Image -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <img src="jason-dent-w3eFhqXjkZE-unsplash.jpg" class="img-fluid rounded" alt="Benefits Image">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">What are the benefits for Real Estate Professionals?</h3>
+                    <p class="lead">Real Estate professionals, including brokers, property valuers/appraisers,
+                        engineers, and others, have the opportunity to collaborate and contribute their data to create a
+                        free and open-source database. In return, they will gain access to a valuable source of
+                        potential leads. The more they contribute, the more features they can unlock, enhancing their
+                        access to valuable information and opportunities within the industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+
+    <section id="ContactUs" class="py-5">
+
+        <div class="container ">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-lg-6">
+                    <h3 class="mb-4 text-light">Contact Information</h3>
+                    <p><strong>PropMonitor Office</strong></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                    <p><i class="fas fa-phone"></i> +91-7795490299</p>
+                    <p><i class="fas fa-envelope"></i> faraz99.freelance@gmail.com</p>
+                </div>
+
+                <!-- Google Map -->
+                <div class="col-lg-6 ">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.488724216952!2d74.5128682!3d15.883446899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf614fcf0bed13%3A0x154156e8c393441b!2s2nd%20Cross%2C%20Azam%20Nagar%2C%20Belagavi%2C%20Karnataka%20590010!5e0!3m2!1sen!2sin!4v1700285672642!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--Footer-->
+
+    <footer class="bg-dark bg-footer" style="margin-top: 80px" id="Contact">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <h5 class="text-light">About Us</h5>
+                    <p class="text-light">PropMonitor is an online property transaction tracker tool. We bring
+                        transparency to the real estate industry
+                        by providing access to reliable and up-to-date information. Our platform collects, analyzes, and
+                        displays data
+                        from various sources, empowering buyers, sellers, investors, and agents. Whether you're looking
+                        for a new home,
+                        selling your property, investing in real estate, or seeking professional advice, PropMonitor
+                        offers data-driven
+                        solutions.</p>
+                    <p class="text-light"><i class="fa fa-location"></i>Bengalore</p>
+                    <p class="text-light"><i class="fa fa-phone"></i>+91-7795490299</p>
+                    <p class="text-light"><i class="fa fa-envelope"> </i>faraz99.freelance.gmail.com</p>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-light">Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Forms</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-light">Stay Connected</h5>
+                    <ul class="text-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/company/real-estate-in/"><i class="fab fa-linkedin"></i>
+                                Linkedin</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-center text-light">
+                        Copyright &copy; 2023 <a href="#">PropMonitor</a>. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script src="transaction.js"></script>
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+
+
+</body>
+
+</html>
