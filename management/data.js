@@ -4,21 +4,21 @@ const MongoClient = mongodb.MongoClient;
 
 const app = express();
 const port = process.env.port || 3000;
-
+const fs = require('fs').promises; // Add this line to import the 'fs' module
 // Replace the connection string with your actual MongoDB connection string
 const connection_string = 'mongodb+srv://Shrinidhi:Shri@crud.8vx9pff.mongodb.net/users';
 const database_name = 'users';
 const collection_name = 'agents';
 
 app.get('/', async (req, res) => {
-    try {
-        const client = await MongoClient.connect(connection_string);
-        const db = client.db(database_name);
-        const collection = db.collection(collection_name);
+  try {
+    const client = await MongoClient.connect(connection_string);
+    const db = client.db(database_name);
+    const collection = db.collection(collection_name);
 
-        const documents = await collection.find().toArray();
+    const documents = await collection.find().toArray();
 
-        res.send(`
+    res.send(`
       <!DOCTYPE html>
       <html>
         <head>
@@ -41,13 +41,13 @@ app.get('/', async (req, res) => {
       </html>
     `);
 
-        client.close();
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
+    client.close();
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
+  console.log(`Server listening at http://localhost:${port}`);
 });

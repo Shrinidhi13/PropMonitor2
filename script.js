@@ -62,3 +62,14 @@ function redirectToAbout() {
 
     window.location.href = 'about.html';
 }
+
+function handleUserTypeChange() {
+    var userTypeSelect = document.getElementById('form_user');
+    var otherInputContainer = document.getElementById('otherInputContainer');
+
+    if (userTypeSelect.value === 'others') {
+        otherInputContainer.style.display = 'block';
+    } else {
+        otherInputContainer.style.display = 'none';
+    }
+}

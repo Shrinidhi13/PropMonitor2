@@ -35,6 +35,8 @@ app.post("/signup", function (req, res) {
     var email = req.body.email;
     var need = req.body.need;
     var message = req.body.message;
+    var user = req.body.user;
+    var other = req.body.other || "None";
 
     var data = {
         "name": name,
@@ -42,7 +44,9 @@ app.post("/signup", function (req, res) {
         "email": email,
         "need": need,
         "message": message,
-        "pdfFile": pdfFile // Include the PDF file data in the data object
+        "pdfFile": pdfFile, // Include the PDF file data in the data object
+        "user": user,
+        "other choice": other
     }
     db.collection('agents').insertOne(data, (err, collection) => {
         if (err) {

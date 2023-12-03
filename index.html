@@ -218,26 +218,10 @@
                 <span class="visually-hidden">Next</span>
             </button>
 
-            <div class="card mb-4 z-1 position-absolute card-bottom card mb-3 card-color rounded-0 bg-dark"
-                style="max-width: 540px;">
-                <div class="row align-items-center">
 
-                    <div class="col-md-9">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Extra info..</h5>
-                            <p class="card-text text-white">This is a wider card with supporting text below as a natural
-                                lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="simone-hutsch-_wpce-AsLxk-unsplash.jpg" class="img-fluid rounded-start" alt="...">
-                    </div>
-                </div>
 
-            </div>
         </div>
+    </div>
     </div>
 
     <!-- Content -->
@@ -430,33 +414,59 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_need">Please specify your need <span
+                                            <label for="form_need">Select your property type <span
                                                     class="required">*</span></label>
                                             <select id="form_need" name="need" class="form-control" required="required">
                                                 <option value="" selected disabled>--Select Your Issue--</option>
-                                                <option value="flat">Apartment</option>
-                                                <option value="bungalow">Agricultural land</option>
-                                                <option value="farmhouse">Independent House</option>
-                                                <option value="farmhouse">Residential land</option>
-                                                <option value="farmhouse">Commericial land</option>
+                                                <option value="Apartment">Apartment</option>
+                                                <option value="Agricultural land">Agricultural land</option>
+                                                <option value="Independent House">Independent House</option>
+                                                <option value="Residential land">Residential land</option>
+                                                <option value="Commericial land">Commericial land</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="mb-3">
+                                    <div class="form-group">
+                                        <label for="form_user">User type <span class="required">*</span></label>
+                                        <div id="userTypeContainer">
+                                            <select id="form_user" name="user" class="form-control" required="required"
+                                                onchange="handleUserTypeChange()">
+                                                <option value="" selected disabled>--Select Your Issue--</option>
+                                                <option value="General Public">General Public</option>
+                                                <option value="Broker/Agent">Broker/Agent</option>
+                                                <option value="Value/Enginee">Value/Engineer</option>
+                                                <option value="Contract/Developer">Contract/Developer</option>
+                                                <option value="others">Others</option>
+                                            </select>
+                                        </div>
+                                        <div id="otherInputContainer" style="display: none;">
+                                            <label for="form_other">Other User Type <span>*</span></label>
+                                            <input type="text" id="form_other" name="other" class="form-control"
+                                                placeholder="Other User Type">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
 
                                 <div class="mb-3">
                                     <label for="formFileMultiple" for="pdfFile" class="form-label">Upload property
                                         related docs
                                         here </label>
                                     <input class="form-control" type="text" id="formFileMultiple" name="pdfFile"
-                                        placeholder="(Please add the google drive link)" required="required">
+                                        placeholder="(Please add the google drive link)">
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="form_message">Message <span class="required">*</span></label>
-                                            <textarea id="form_message" name="message" class="form-control" rows="4"
-                                                required="required"></textarea>
+                                            <label for="form_message">Message </label>
+                                            <textarea id="form_message" name="message" class="form-control"
+                                                rows="4"></textarea>
                                         </div>
                                     </div>
                                     <div class="text-center">
@@ -653,8 +663,8 @@
                         selling your property, investing in real estate, or seeking professional advice, PropMonitor
                         offers data-driven
                         solutions.</p>
-                    <p class="text-light"><i class="fa fa-location"></i>Bengalore</p>
-                    <p class="text-light"><i class="fa fa-phone"></i>+91-7795490299</p>
+                    <p class="text-light"><i class="fa fa-location"></i>Subhash Nagar,Belgaum</p>
+                    <p class="text-light"><i class="fa fa-phone"></i>+91 8073871995</p>
                     <p class="text-light"><i class="fa fa-envelope"> </i>faraz99.freelance.gmail.com</p>
                 </div>
 
