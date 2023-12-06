@@ -53,6 +53,8 @@ app.post("/signup", function (req, res) {
             throw err;
         }
         console.log("Recorded Successfully");
+
+
     });
 
     return res.redirect('index.html');
